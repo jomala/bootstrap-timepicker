@@ -134,7 +134,7 @@
                     var hours = dTime.getHours();
                     var minutes = Math.floor(dTime.getMinutes() / this.minuteStep) * this.minuteStep;
                     var meridian = "AM";
-                    if ( this.showMeridian ) {
+                    if (this.showMeridian) {
                         if (hours === 0) {
                             hours = 12;
                         } else if (hours > 12) {
@@ -143,6 +143,8 @@
                         } else {
                            meridian = "AM";
                         }
+                    }else if(hours > 12){
+                        meridian = "PM";
                     }
                     this.hour = hours;
                     this.minute = minutes;
@@ -152,7 +154,7 @@
                 } else {
                     this.setValues(defaultTime);
                 }
-                this.update();
+                this.updateWidget();
             } else {
                 this.hour = 0;
                 this.minute = 0;
